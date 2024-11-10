@@ -10,21 +10,41 @@ body {
 .page{
     display: grid;
     grid-template-rows: auto auto auto auto auto;
-    grid-gap: 1.5em;
+    grid-gap: 0.6em;
     justify-items: center;
 }
 .daniel, .jonathan, .patrick, .jeanette, .kira {
-    border: 1px solid black;
+    border: 1px solid transparent;
     border-radius: 2%;
     color: hsl(0, 0%, 81%);
+    justify-content: center;
     padding: 20px;
+    padding-bottom: 25px;
     margin-bottom: 20px;
     width: 75%;
+}
+p {
+    font-size: 0.8em;
+}
+.bg-pattern-quotation{
+    position: absolute;
+    top: 80px; 
+    left: 230px; 
+    opacity: 0.5;
+    background-size: contain;
+    z-index: 1;
+    display: flex !important;
+    overflow: hidden;
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 0 !important;
 }
 .verified {
     margin-left: 1em;
     font-weight: 500;
     color: hsl(0, 0%, 81%);
+    font-size: 0.8em;
+    padding-bottom: 0.6em !important;
   }
 .name{
     margin-left: 1em;;
@@ -48,22 +68,27 @@ body {
 }
 .kira{
     background-color: white;
+    font-weight: 500;
 
 }
 .jonathan h1, .daniel h1, .patrick h1{
     color: white;
     font-size: 1.2em;
-
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
 }
 .kira h1,  .jeanette h1{
     color: black;
     font-size: 1.2em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
 }
 .daniel img, .jonathan img, .jeanette img, .patrick img, .kira img {
     border-radius: 50%;
     width: 30px; 
     height: 30px; 
     object-fit: cover; 
+    padding-bottom: 0.6em;
   }
 h1 {
     color: hsl(0, 0, 100%);
