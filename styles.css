@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: hsl(0, 0%, 81%);
+}
+.page{
+    display: grid;
+    grid-template-rows: auto auto auto auto auto;
+    grid-gap: 1.5em;
+    justify-items: center;
+}
+.daniel, .jonathan, .patrick, .jeanette, .kira {
+    border: 1px solid black;
+    border-radius: 2%;
+    color: hsl(0, 0%, 81%);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 75%;
+}
+.verified {
+    margin-left: 1em;
+    font-weight: 500;
+    color: hsl(0, 0%, 81%);
+  }
+.name{
+    margin-left: 1em;;
+}
+.daniel{
+    margin-top: 20%;
+    background-color: hsl(263, 55%, 52%);
+}
+.daniel-info, .jonathan-info, .jeanette-info, .patrick-info, .kira-info {
+    display: flex;
+    align-items: center;
+  }
+.jonathan{
+    background-color: hsl(217, 19%, 35%);
+}
+.jeanette{
+    background-color: white;
+}
+.patrick{
+    background-color: hsl(219, 29%, 14%);
+}
+.kira{
+    background-color: white;
+
+}
+.jonathan h1, .daniel h1, .patrick h1{
+    color: white;
+    font-size: 1.2em;
+
+}
+.kira h1,  .jeanette h1{
+    color: black;
+    font-size: 1.2em;
+}
+.daniel img, .jonathan img, .jeanette img, .patrick img, .kira img {
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px; 
+    object-fit: cover; 
+  }
+h1 {
+    color: hsl(0, 0, 100%);
+}
+.attribution { 
+    font-size: 11px; text-align: center;
+ }
+.attribution a {
+     color: hsl(228, 45%, 44%); 
+    }
+@media (max-width: 768px) {
+    .container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  /* Masaüstü İçin Çok Kolon Yapısı */
+  @media (min-width: 1440px) {
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
