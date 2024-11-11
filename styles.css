@@ -5,7 +5,7 @@
 }
 body {
     font-family: 'Barlow Semi Condensed', sans-serif;
-    background-color: hsl(0, 0%, 81%);
+    background-color: hsl(210, 46%, 95%);
 }
 .page{
     display: grid;
@@ -25,6 +25,7 @@ body {
 }
 p {
     font-size: 0.8em;
+
 }
 .bg-pattern-quotation{
     position: absolute;
@@ -42,6 +43,7 @@ p {
 .verified {
     margin-left: 1em;
     font-weight: 500;
+    opacity: 50%;
     color: hsl(0, 0%, 81%);
     font-size: 0.8em;
     padding-bottom: 0.6em !important;
@@ -100,9 +102,32 @@ h1 {
      color: hsl(228, 45%, 44%); 
     }
 @media (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr 1fr;
+
+    .page {
+        justify-items: center;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: 
+            "daniel jonathan kira kira"
+            "jeanette patrick kira kira";
+        grid-template-columns: repeat(4, 1fr);
     }
+
+    .daniel {
+        grid-area: daniel;
+    }
+    .jonathan {
+        grid-area: jonathan;
+    }
+    .jeanette {
+        grid-area: jeanette;
+    }
+    .patrick {
+        grid-area: patrick;
+    }
+    .kira {
+        grid-area: kira;
+    }
+}
   }
   
   /* Masaüstü İçin Çok Kolon Yapısı */
