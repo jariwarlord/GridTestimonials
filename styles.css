@@ -1,97 +1,145 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     background-color: hsl(210, 46%, 95%);
     margin: 4em auto;
-  }
-  
-  .page {
-    margin: 10%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page {
+    width: 90%;
+    max-width: 1440px;
     display: grid;
-    padding-top: 10em;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: 400px;
-    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 24px;
+    padding: 2rem;
     grid-template-areas:
-      "daniel daniel jonathan kira"
-      "jeanette patrick patrick kira";
-  }
-  
-  .card {
-    border-radius: 3%;
+        "daniel daniel jonathan kira"
+        "jeanette patrick patrick kira";
+}
+
+.card {
+    border-radius: 8px;
     padding: 2em;
     font-size: 1.1em;
-  }
-  
-  p {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+p {
     font-size: 0.8em;
-  }
-  
-  .verified {
+    line-height: 1.5;
+}
+
+.verified {
     margin-left: 1em;
     font-weight: 500;
     opacity: 0.5;
     color: hsl(0, 0%, 81%);
-    padding-bottom: 0.6em;
-  }
-  
-  .name {
+}
+
+.name {
     margin-left: 1em;
-  }
-  
-  .daniel {
+    color: inherit;
+}
+
+.daniel {
     background-color: hsl(263, 55%, 52%);
     grid-area: daniel;
     background-image: url(./images/bg-pattern-quotation.svg);
     background-repeat: no-repeat;
-    background-position: 80% 0;
+    background-position: 80% 10%;
     color: white;
-  }
-  
-  .jonathan {
+}
+
+.jonathan {
     background-color: hsl(217, 19%, 35%);
     grid-area: jonathan;
     color: white;
-  }
-  
-  .jeanette, .kira {
+}
+
+.jeanette {
     background-color: white;
     color: hsl(217, 19%, 35%);
-  }
-  .kira {
+    grid-area: jeanette;
+}
+
+.kira {
+    background-color: white;
+    color: hsl(217, 19%, 35%);
     grid-area: kira;
-  }
-  .patrick {
+}
+
+.patrick {
     background-color: hsl(219, 29%, 14%);
     grid-area: patrick;
     color: white;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 1.2em;
-    padding-top: 0.6em;
-    padding-bottom: 0.6em;
-  }
-  
-  .card img {
+    margin: 0.6em 0;
+}
+
+.card img {
     border-radius: 50%;
     width: 30px;
     height: 30px;
     object-fit: cover;
-    padding-bottom: 0.6em;
-  }
-  
-  .attribution {
+}
+
+.attribution {
     font-size: 11px;
     text-align: center;
-  }
-  
-  .attribution a {
+    margin-top: 2rem;
+}
+
+.attribution a {
     color: hsl(228, 45%, 44%);
-  }
-  
+}
+@media (max-width: 375px){
+    .page{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "daniel"
+        "jonathan"
+        "jeanette"
+        "patrick"
+        "kira";
+        padding: 2em;
+        
+    }
+    .card {
+        padding: 1.5em;
+    }
+
+    /* Metin boyutları mobil uyum için küçültüldü */
+    h1 {
+        font-size: 1em;
+    }
+    p {
+        font-size: 0.9em;
+    }
+
+    /* Kira ve diğer kartların mobil düzenle uyumlu hale getirilmesi */
+    .kira, .daniel, .jonathan, .jeanette, .patrick {
+        margin-top: 0;
+        background-position: center;
+        background-size: contain;
+    }
+}
