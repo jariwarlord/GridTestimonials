@@ -1,190 +1,97 @@
-*{
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    
-}
-body {
+  }
+  
+  body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     background-color: hsl(210, 46%, 95%);
-}
-.page{
+    margin: 4em auto;
+  }
+  
+  .page {
+    margin: 10%;
     display: grid;
-    grid-template-rows: auto auto auto auto auto;
-    grid-gap: 0.6em;
-    justify-items: center;
-}
-.daniel, .jonathan, .patrick, .jeanette, .kira {
-    border: 1px solid transparent;
-    border-radius: 2%;
-    color: hsl(0, 0%, 81%);
-    justify-content: center;
-    padding: 20px;
-    padding-bottom: 25px;
-    margin-bottom: 20px;
-    width: 75%;
-}
-p {
+    padding-top: 10em;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: 400px;
+    grid-gap: 20px;
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+  }
+  
+  .card {
+    border-radius: 3%;
+    padding: 2em;
+    font-size: 1.1em;
+  }
+  
+  p {
     font-size: 0.8em;
-
-}
-.bg-pattern-quotation{
-    position: absolute;
-    top: 80px; 
-    left: 230px; 
-    opacity: 0.5;
-    background-size: contain;
-    z-index: 1;
-    display: flex !important;
-    overflow: hidden;
-    width: 100px !important;
-    height: 100px !important;
-    border-radius: 0 !important;
-}
-.verified {
+  }
+  
+  .verified {
     margin-left: 1em;
     font-weight: 500;
-    opacity: 50%;
+    opacity: 0.5;
     color: hsl(0, 0%, 81%);
-    font-size: 0.8em;
-    padding-bottom: 0.6em !important;
+    padding-bottom: 0.6em;
   }
-.name{
-    margin-left: 1em;;
-}
-.daniel{
-    margin-top: 20%;
+  
+  .name {
+    margin-left: 1em;
+  }
+  
+  .daniel {
     background-color: hsl(263, 55%, 52%);
-}
-.daniel-info, .jonathan-info, .jeanette-info, .patrick-info, .kira-info {
-    display: flex;
-    align-items: center;
-  }
-.jonathan{
-    background-color: hsl(217, 19%, 35%);
-}
-.jeanette{
-    background-color: white;
-}
-.patrick{
-    background-color: hsl(219, 29%, 14%);
-}
-.kira{
-    background-color: white;
-    font-weight: 500;
-
-}
-.jonathan h1, .daniel h1, .patrick h1{
+    grid-area: daniel;
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: 80% 0;
     color: white;
+  }
+  
+  .jonathan {
+    background-color: hsl(217, 19%, 35%);
+    grid-area: jonathan;
+    color: white;
+  }
+  
+  .jeanette, .kira {
+    background-color: white;
+    color: hsl(217, 19%, 35%);
+  }
+  .kira {
+    grid-area: kira;
+  }
+  .patrick {
+    background-color: hsl(219, 29%, 14%);
+    grid-area: patrick;
+    color: white;
+  }
+  
+  h1 {
     font-size: 1.2em;
     padding-top: 0.6em;
-    padding-bottom: 0.6em;
-}
-.kira h1,  .jeanette h1{
-    color: black;
-    font-size: 1.2em;
-    padding-top: 0.6em;
-    padding-bottom: 0.6em;
-}
-.daniel img, .jonathan img, .jeanette img, .patrick img, .kira img {
-    border-radius: 50%;
-    width: 30px; 
-    height: 30px; 
-    object-fit: cover; 
     padding-bottom: 0.6em;
   }
-h1 {
-    color: hsl(0, 0, 100%);
-}
-.attribution { 
-    font-size: 11px; text-align: center;
- }
-.attribution a {
-     color: hsl(228, 45%, 44%); 
-    }
-@media (min-width: 768px) {
-
-    .page {
-        justify-items: center;
-        grid-template-rows: auto auto auto auto auto;
-        grid-template-areas: 
-            "daniel jonathan kira kira"
-            "jeanette patrick kira kira";
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .daniel {
-        grid-area: daniel;
-    }
-    .jonathan {
-        grid-area: jonathan;
-    }
-    .jeanette {
-        grid-area: jeanette;
-    }
-    .patrick {
-        grid-area: patrick;
-    }
-    .kira {
-        grid-area: kira;
-    }
-}
-
-/* Desktop için Grid Düzenlemesi */
-@media (min-width: 1440px) {
-    .page {
-    display: grid;
-    place-items: center;
-    grid-gap: 2em;
-    padding-top: 10em;
-     grid-template-columns: repeat(4, minmax(200px, auto));
-     grid-template-areas:
-        "daniel daniel jonathan kira"
-        "jeanette patrick patrick kira";
-    }
   
-    .daniel {
-      grid-area: daniel;
-      margin: 0;
-      height: 100%;
-    }
+  .card img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    padding-bottom: 0.6em;
+  }
   
-    .jonathan {
-      grid-area: jonathan;
-      margin: 0;
-      width: 100%;
-      height: 100%;
-    }
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
   
-    .jeanette {
-      grid-area: jeanette;
-      margin-left: 5em;
-      height: 100%;
-      width: 100%;
-    
-    }
-  
-    .patrick {
-      grid-area: patrick;
-    }
-  
-    .kira {
-      grid-area: kira;
-      grid-row: span 2;
-      height: 100%;
-      
-    }
-  
-    /* Yazı içeriklerinin grid hücrelere daha iyi sığması için */
-    .daniel h1, .jonathan h1, .patrick h1 {
-      font-size: 1.2em;
-    }
-  
-    .kira h1, .jeanette h1 {
-      font-size: 1.1em;
-    }
-  
-    p {
-      font-size: 0.75em;
-    }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
   }
   
